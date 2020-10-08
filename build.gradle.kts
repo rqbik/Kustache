@@ -3,20 +3,23 @@ plugins {
     maven
 }
 
-group = "com.rqbik"
-version = "1.0-SNAPSHOT"
+val main = project(absoluteProjectPath("kustache"))
 
-repositories {
-    mavenCentral()
-    jcenter()
-    maven("https://papermc.io/repo/repository/maven-public/")
-}
+allprojects {
+    apply(plugin = "kotlin")
 
-dependencies {
-    implementation(kotlin("stdlib"))
-    compileOnly("com.destroystokyo.paper", "paper-api", "1.16.3-R0.1-SNAPSHOT")
-}
+    repositories {
+        jcenter()
+    }
 
-tasks {
-    compileKotlin { kotlinOptions.jvmTarget = "1.8" }
+    dependencies {
+        if (name != "kustache") implementation(main)
+        testImplementation("org.junit.jupiter", "junit-jupiter" , "5.6.2")
+    }
+
+    tasks {
+        compileKotlin { kotlinOptions.jvmTarget = "1.8" }
+        compileTestKotlin { kotlinOptions.jvmTarget = "1.8" }
+        test { useJUnitPlatform() }
+    }
 }

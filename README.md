@@ -65,6 +65,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.rqbik", "Kustache", "1.0.1")
+    implementation("com.github.rqbik", "Kustache", "1.0.2")
 }
 ```
