@@ -65,6 +65,8 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.rqbik", "Kustache", "1.0.2")
+    implementation("com.github.rqbik", "kustache", "1.0.3")
+    // ...and serializers...
+    // implementation("com.github.rqbik", "kustache-plain", "1.0.3")
 }
 ```
