@@ -31,8 +31,7 @@ val provider = TransformerProvider.provider.apply {
             val percentFade = idx.toFloat() / (content.length - 1).toFloat()
 
             // Add new components to your text
-            text.components.add(TextComponent().apply {
-                this.content = it.toString()
+            text.add(it.toString()) {
                 // ...and color each one of them differently
                 color = Color(percentFade, percentFade, percentFade)
             })
